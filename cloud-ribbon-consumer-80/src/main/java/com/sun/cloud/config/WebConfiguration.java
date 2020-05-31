@@ -1,6 +1,5 @@
 package com.sun.cloud.config;
 
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -14,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class WebConfiguration {
 
     @Bean
-    @LoadBalanced
+    // @LoadBalanced 自定义负载均衡规则的时候去除该注解
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
