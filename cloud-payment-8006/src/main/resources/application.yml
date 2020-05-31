@@ -1,0 +1,21 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useEncoding=true&characterEncoding=utf8&useSSL=false
+    driver-class-name: org.gjt.mm.mysql.Driver
+    username: root
+    password: 123456
+  cloud:
+    consul:
+      port: 8500
+      host: 192.168.126.10
+      discovery:
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
+        health-check-critical-timeout: 10s #过多少秒健康检查不通过，从consul中删除该服务
