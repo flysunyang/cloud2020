@@ -12,6 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FooConfiguration {
 
+    /**
+     * openfeign的日志级别bean
+     */
     @Bean
     public Logger.Level level() {
         return Logger.Level.FULL;
