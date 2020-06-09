@@ -14,6 +14,8 @@ import java.util.concurrent.TimeUnit;
  * @create 2020-06-01 10:43
  */
 @Service
+//针对指定的服务，使用默认的服务降级方法，下面方法启用@HystrixCommand即可
+// @DefaultProperties(defaultFallback = "timeoutFallBack")
 public class PaymentServiceImpl implements PaymentService {
 
     @Override

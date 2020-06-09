@@ -31,10 +31,16 @@ public class PaymentController {
     @Value("${server.port}")
     String port;
 
+    @GetMapping("/addParam")
+    public String addParam(String color) {
+        System.out.println("color: " + color);
+        return "addParam: " + port;
+    }
+
     @GetMapping("/port")
     public String port() {
         try {
-            TimeUnit.SECONDS.sleep(4);
+            TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
